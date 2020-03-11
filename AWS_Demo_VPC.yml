@@ -1,18 +1,18 @@
 - hosts: localhost
-  remote_user: root
-  task:
+    remote_user: root
+    task:
   - name: Create project VPC
-    ec2_vpc_net:
+      ec2_vpc_net:
         name: "{{ vpc.aws_vpc_name }}"
         cidr_block: "{{ vpc.aws_vpc_cidrblock }}"
         region: "{{ vpc.aws_vpc_region }}"
         tenancy: default
         state: present
-      register: vpc_result
-      tags:
+        register: vpc_result
+        tags:
         - vpc
     
-   - name: Create subnet
+  - name: Create subnet
       ec2_vpc_subnet:
         region: "{{ vpc.aws_vpc_region }}"
         state: present
