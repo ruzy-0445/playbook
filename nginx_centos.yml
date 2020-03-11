@@ -1,7 +1,7 @@
 ## Credits to John Lieske - https://www.ansible.com/blog/getting-started-writing-your-first-playbook
 ---
 - name: Install nginx
-  hosts: host.name.ip
+#  hosts: host.name.ip
   become: true
 
   tasks:
