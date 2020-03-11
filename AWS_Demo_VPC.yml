@@ -2,7 +2,7 @@
   remote_user: root
   task:
   - name: Create project VPC
-      ec2_vpc_net:
+    ec2_vpc_net:
         name: "{{ vpc.aws_vpc_name }}"
         cidr_block: "{{ vpc.aws_vpc_cidrblock }}"
         region: "{{ vpc.aws_vpc_region }}"
