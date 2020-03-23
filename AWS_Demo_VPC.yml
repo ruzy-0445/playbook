@@ -6,8 +6,6 @@
      cidr_block: "{{ vpc_cidr }}"
      region: "{{ region }}"
      state: present
-     aws_access_key: "{{ aws_access_key }}"
-     aws_secret_key: "{{ aws_secret_key }}"
    register: vpc
 
 
@@ -22,8 +20,6 @@
     vpc_id: "{{ vpc_id }}"
     region: "{{ region }}"
     cidr: "{{ subnet_cidr }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     map_public: yes
     resource_tags:
       Name: "{{ subnet_name }}"
@@ -33,8 +29,6 @@
    ec2_vpc_igw:
     vpc_id: "{{ vpc_id }}"
     region: "{{ region }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     state: "present"
     tags:
       Name: "{{ igw_name }}"
@@ -45,8 +39,6 @@
    ec2_vpc_route_table:
     vpc_id: "{{ vpc_id }}"
     region: "{{ region }}"
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     subnets:
       - "{{ subnet.subnet.id }}"
     routes:
