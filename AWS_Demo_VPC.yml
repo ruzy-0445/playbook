@@ -2,7 +2,7 @@
 - name: Hello World!
   hosts: all
 
-  task:
+  tasks:
   - name: create VPC
     ec2_vpc_net:
       name: "{{ vpc_name }}"
