@@ -1,5 +1,7 @@
 ---
-- hosts: localhost
+- name: Hello World!
+  hosts: localhost
+
   task:
   - name: create VPC
     ec2_vpc_net:
