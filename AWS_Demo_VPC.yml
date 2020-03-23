@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-    task:
+  task:
   - name: Create project VPC
       ec2_vpc_net:
         name: "{{ vpc.aws_vpc_name }}"
