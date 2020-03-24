@@ -7,7 +7,9 @@
   - name: Start To Deploy EKS_Cluster
     docker_container:
       name: eks_deploy
-      images: ruzyyu/eks_deploy:2
+      images:
+        name: ruzyyu/eks_deploy
+        tag: 2
       env:
         AWS_ACCESS_KEY_ID: "{{AWS_ACCESS_KEY_ID}}"
         AWS_SECRET_ACCESS_KEY: "{{AWS_SECRET_ACCESS_KEY}}"
