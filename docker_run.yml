@@ -4,5 +4,4 @@
   
   tasks: 
   - name: Run Task Docker
-    shell: 
-      cmd: docker run  {{ images_name }} 
+    command: docker run  {{ images_name }} 
