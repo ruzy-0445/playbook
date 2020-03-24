@@ -1,11 +1,16 @@
 ---
-- name: Start To Deploy EKS_Cluster
-  docker_container:
-    name: eks_deploy
-    images: ruzyyu/eks_deploy:2
-    env:
-      AWS_ACCESS_KEY_ID: {{AWS_ACCESS_KEY_ID}}
-      AWS_SECRET_ACCESS_KEY: {{AWS_SECRET_ACCESS_KEY}}
-      AWS_REGION: {{AWS_REGION}}
-      CLUSTER_NAME: {{CLUSTER_NAME}}
-    command: ["/bin/sh"."/scripts/eks_cluster_fargate/deploy_cluster.sh"]
+- name: Deploy EKS Fargate
+  hosts: localhost
+  
+  tasks:
+  
+  - name: Start To Deploy EKS_Cluster
+    docker_container:
+      name: eks_deploy
+      images: ruzyyu/eks_deploy:2
+      env:
+        AWS_ACCESS_KEY_ID: {{AWS_ACCESS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: {{AWS_SECRET_ACCESS_KEY}}
+        AWS_REGION: {{AWS_REGION}}
+        CLUSTER_NAME: {{CLUSTER_NAME}}
+      command: ["/bin/sh"."/scripts/eks_cluster_fargate/deploy_cluster.sh"]
