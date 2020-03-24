@@ -1,0 +1,8 @@
+---
+- name: Create_EKS_Cluster
+  hosts: localhost
+  
+  tasks: 
+  - name: Run Task Docker
+    shell: 
+      cmd: docker run  {{ images_name }} 
