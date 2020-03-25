@@ -6,7 +6,7 @@
   
   - name: Start To Deploy EKS_Cluster
     docker_container:
-      name: eks_deploy
+      name: "{{CLUSTER_NAME}}"
       image: ruzyyu/eks_deploy:2
       env:
         AWS_ACCESS_KEY_ID: "{{AWS_ACCESS_KEY_ID}}"
