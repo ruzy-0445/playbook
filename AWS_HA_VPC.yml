@@ -4,7 +4,7 @@
 
   tasks:
   - name: AWS_HA_VPC
-    ec2_vpc_net:
+    ec2_vpc:
       state: present
       cidr_block: "{{ VPC_CIDR }}"
       resource_tags: { "Name":"{{ VPC_NAME }}" }
@@ -37,4 +37,3 @@
           routes:
             - dest: 0.0.0.0/0
               gw: igw
-    rgister: vpc
