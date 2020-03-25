@@ -1,7 +1,7 @@
 ---
 - name: Create_EKS_Cluster
-  hosts: localhost
+  hosts: 172.31.35.57
   
   tasks: 
-  - name: Pull default Docker image
-    command: docker run -it -d centos
+  - name: run eks deploy images
+    command: docker run docker.io/ruzyyu/eks_deploy:2 /bin/sh /scripts/eks_cluster_fargate/deploy_cluster.sh
