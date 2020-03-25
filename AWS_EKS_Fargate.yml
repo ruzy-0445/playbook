@@ -14,5 +14,7 @@
         AWS_REGION: "{{AWS_REGION}}"
         CLUSTER_NAME: "{{CLUSTER_NAME}}"
       command: ["/bin/sh","/scripts/eks_cluster_fargate/deploy_cluster.sh"]
+      
+  - name: Waiting to Deploy 
     pause:
       minutes: 30
