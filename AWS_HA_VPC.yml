@@ -1,8 +1,8 @@
+---
 - name:
   hosts: localhost
 
-  tasks:  
-  
+  tasks:
   - name: Create high-level VPC
     ec2_vpc:
       state: present
