@@ -3,8 +3,7 @@
   hosts: localhost
 
   tasks:
-  - name: Create high-level VPC
-    ec2_vpc:
+  - ec2_vpc:
       state: present
       cidr_block: "{{VPC_CIDR}}"
       resource_tags: { "Name":"{{VPC_NAME}}" }
