@@ -1,5 +1,5 @@
 - name:
-  hosts:
+  hosts: localhost
 
   tasks:  
   
