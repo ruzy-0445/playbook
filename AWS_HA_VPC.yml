@@ -1,38 +1,39 @@
 ---
-- name:
+- name: AWS_HA_VPC
   hosts: localhost
 
   tasks:
-  - ec2_vpc:
+  - name: AWS_HA_VPC
+    ec2_vpc_net:
       state: present
-      cidr_block: "{{VPC_CIDR}}"
-      resource_tags: { "Name":"{{VPC_NAME}}" }
-      region: "{{REGION}}"
+      cidr_block: "{{ VPC_CIDR }}"
+      resource_tags: { "Name":"{{ VPC_NAME }}" }
+      region: "{{ REGION }}"
       subnets:
-        - cidr: "{{SUBNET_PUB_A_CIDR}}"
-          az: "{{REGION}}a"
+        - cidr: "{{ SUBNET_PUB_A_CIDR }}"
+          az: "{{ REGION }}a"
           resource_tags: { "Name":"Public_A" }
-        - cidr: "{{SUBNET_PUB_B_CIDR}}"
-          az: "{{REGION}}b"
+        - cidr: "{{ SUBNET_PUB_B_CIDR }}"
+          az: "{{ REGION }}b"
           resource_tags: { "Name":"Public_B" }
-        - cidr: "{{SUBNET_PUB_C_CIDR}}"
-          az: "{{REGION}}c"
+        - cidr: "{{ SUBNET_PUB_C_CIDR }}"
+          az: "{{ REGION }}c"
           resource_tags: { "Name":"Public_C" }
-        - cidr: "{{SUBNET_PRI_A_CIDR}}"
-          az: "{{REGION}}a"
+        - cidr: "{{ SUBNET_PRI_A_CIDR }}"
+          az: "{{ REGION }}a"
           resource_tags: { "Name":"Public_A" }
-        - cidr: "{{SUBNET_PRI_B_CIDR}}"
-          az: "{{REGION}}b"
+        - cidr: "{{ SUBNET_PRI_B_CIDR }}"
+          az: "{{ REGION }}b"
           resource_tags: { "Name":"Public_B" }
-        - cidr: "{{SUBNET_PRI_C_CIDR}}"
-          az: "{{REGION}}c"
+        - cidr: "{{ SUBNET_PRI_C_CIDR }}"
+          az: "{{ REGION }}c"
           resource_tags: { "Name":"Public_C" }          
       internet_gateway: True
       route_tables:
         - subnets:
-            - "{{SUBNET_PUB_A_CIDR}}"
-            - "{{SUBNET_PUB_B_CIDR}}"
-            - "{{SUBNET_PUB_C_CIDR}}"
+            - "{{ SUBNET_PUB_A_CIDR }}"
+            - "{{ SUBNET_PUB_B_CIDR }}"
+            - "{{ SUBNET_PUB_C_CIDR }}"
           routes:
             - dest: 0.0.0.0/0
               gw: igw
