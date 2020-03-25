@@ -1,6 +1,6 @@
 ---
 - name: Deploy EKS Fargate
-  hosts: localhost
+  hosts: 172.31.35.57
   
   tasks:
   
