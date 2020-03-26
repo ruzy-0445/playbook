@@ -22,7 +22,7 @@
         Name: "{{ subnet_name }}"
     register: subnet
  
-  - name: create IGW
+  - name: 開始創建Internet Gateway
     ec2_vpc_igw:
       vpc_id: "{{ vpc.vpc.id }}"
       region: "{{ region }}"
@@ -31,7 +31,7 @@
         Name: "{{ igw_name }}"
     register: igw
   
-  - name: Route IGW
+  - name: 開始創建路由表
     ec2_vpc_route_table:
       vpc_id: "{{ vpc.vpc.id }}"
       region: "{{ region }}"
@@ -44,10 +44,10 @@
         Name: "Public_Route"
  
  
-  - name: Create Security Group
+  - name: 
     ec2_group:
-      name: Web DMZ
-      description: DMZ Security Group
+      name: Web_SG
+      description: 
       vpc_id: "{{ vpc.vpc.id }}"
       region: "{{ region }}"
       rules:
