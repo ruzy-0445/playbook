@@ -32,14 +32,14 @@
     register: igw
   
   - name: Route IGW
-    ec2_vpc_route_table:
+     ec2_vpc_route_table:
       vpc_id: "{{ vpc_id }}"
       region: "{{ region }}"
       subnets:
         - "{{ subnet.subnet.id }}"
       routes:
         - dest: 0.0.0.0/0
-      gateway_id: "{{ igw.gateway_id  }}"
+          gateway_id: "{{ igw.gateway_id  }}"
       tags:
         Name: "{{ route_name }}"
  
@@ -60,4 +60,3 @@
           - 22
           cidr_ip: 0.0.0.0/0
     register: security_group
-       Name: "{{ route_name }}"
