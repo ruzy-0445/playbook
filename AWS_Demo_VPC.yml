@@ -32,7 +32,7 @@
     register: igw
   
   - name: Route IGW
-     ec2_vpc_route_table:
+    ec2_vpc_route_table:
       vpc_id: "{{ vpc_id }}"
       region: "{{ region }}"
       subnets:
