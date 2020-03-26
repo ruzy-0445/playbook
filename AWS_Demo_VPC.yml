@@ -1,4 +1,4 @@
-- name: 開始進行VPC創見
+- name: 開始進行VPC創建
   hosts: localhost
   
   tasks:
