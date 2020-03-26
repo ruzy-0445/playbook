@@ -1,4 +1,4 @@
-- name: 開始進行高可用網路架構建置
+- name: 開始進行VPC創見
   hosts: localhost
   
   tasks:
