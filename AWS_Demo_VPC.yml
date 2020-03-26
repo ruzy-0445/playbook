@@ -41,7 +41,7 @@
         - dest: 0.0.0.0/0
           gateway_id: "{{ igw.gateway_id  }}"
       tags:
-        Name: "{{ route_name }}"
+        Name: "Public_Route"
  
  
   - name: Create Security Group
