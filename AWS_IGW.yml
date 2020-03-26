@@ -1,0 +1,16 @@
+- name: 創見路由表
+  hosts: localhost
+  
+  tasks:
+
+  - name: 開始創建路由表
+    ec2_vpc_route_table:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      subnets:
+        - "{{ subnet.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw.gateway_id  }}"
+      tags:
+        Name: "Public_Route"
