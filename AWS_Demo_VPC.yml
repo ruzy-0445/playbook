@@ -44,7 +44,7 @@
         Name: "Public_Route"
  
  
-  - name: 創建VPC
+  - name: 創建 Security Group
     ec2_group:
       name: Web_SG
       description: 
