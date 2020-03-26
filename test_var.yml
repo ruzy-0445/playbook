@@ -1,7 +1,7 @@
 ---
  - hosts: localhost
    remote_user: root
-   gather_facts: no
+   gather_facts: yes
    tasks: 
      - name: test playbook variables
        command: echo " {{ test }} "
