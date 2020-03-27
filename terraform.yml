@@ -4,5 +4,5 @@
   - name: tf_test
     terraform:
       project_path: "/home/ec2-user/tf/"
-      state_file: "/home/ec2-user/tf/main.tf"
+      plan_file: "/home/ec2-user/tf/main.tf"
       state: planned
