@@ -4,5 +4,4 @@
   - name: tf_test
     terraform:
       project_path: "/home/ec2-user/tf/"
-      variables_file: "/home/ec2-user/tf/main.tf"
       state: present
