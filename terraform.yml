@@ -4,4 +4,4 @@
   - name: tf_test
     terraform:
       project_path: "/home/ec2-user/tf/"
-      state: present
+      state: planned
