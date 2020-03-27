@@ -1,0 +1,7 @@
+- name:
+  hosts: 18.163.208.246
+  tasks:
+  - name: tf_test
+    terraform:
+      project_path: "/home/ec2-user/tf/"
+      state: present
