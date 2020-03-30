@@ -1,7 +1,8 @@
 ---
-- hosts: localhost
+- name: Subnet
+  hosts: localhost
   tasks:
-  - name: Subnet
+  - name: 開始創建Subnet
     ec2_vpc_subnet:
       state: present
       vpc_id: "{{ vpc.vpc.id }}"
