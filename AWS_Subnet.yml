@@ -1,4 +1,4 @@
-- name: 開始進行Subnet創見
+- name: 開始進行Subnet創建
   hosts: localhost
   tasks:
   - name: 開始創建Subnet
@@ -11,3 +11,7 @@
       resource_tags:
         Name: "{{ subnet_name }}"
     register: subnet
+  - name: set_subnetID
+    set_stats:
+      data:
+        subnet_id: "{{subnet.subnet.id}}"
