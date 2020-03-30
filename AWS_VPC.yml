@@ -8,3 +8,8 @@
       region: "{{ region }}"
       state: present
     register: vpc
+    
+  - name: set_var
+    set_stats:
+      data:
+        vpc_id: "{{vpc.vpc.id}}"
