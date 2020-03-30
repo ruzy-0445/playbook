@@ -5,7 +5,7 @@
   - name: 開始創建Subnet
     ec2_vpc_subnet:
       state: present
-      vpc_id: "{{ vpc.vpc.id }}"
+      vpc_id: "vpc-09dda7f54d7cc1c74"
       region: "{{ region }}"
       cidr: "{{ subnet_cidr }}"
       map_public: yes
