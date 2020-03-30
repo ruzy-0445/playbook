@@ -1,7 +1,3 @@
----
-- name: Subnet
-  hosts: localhost
-  tasks:
   - name: 開始創建Subnet
     ec2_vpc_subnet:
       state: present
