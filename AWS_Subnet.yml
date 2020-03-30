@@ -1,14 +1,14 @@
 - name: 開始進行Subnet創見
   hosts: localhost
   
-  tasks:
-- name: 開始創建Subnet
-    ec2_vpc_subnet:
-      state: present
-      vpc_id: "{{ vpc_id }}"
-      region: "{{ region }}"
-      cidr: "{{ subnet_cidr }}"
-      map_public: yes
-      resource_tags:
-        Name: "{{ subnet_name }}"
-    register: subnet
+    tasks:
+  - name: 開始創建Subnet
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpc_id }}"
+        region: "{{ region }}"
+        cidr: "{{ subnet_cidr }}"
+        map_public: yes
+        resource_tags:
+          Name: "{{ subnet_name }}"
+      register: subnet
