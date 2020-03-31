@@ -14,7 +14,7 @@
         private_key: "{{key.key.private_key}} "
         
   - name: 將key儲存到CREDENTIALS
-    awx_credential:
+    tower_credential:
       name: "{{key_name}}"
       kind: ssh
       ssh_key_data: "{{key.key.private_key}}"
