@@ -21,4 +21,4 @@
       organization: NextLink
       tower_username: "{{user_name}}"
       tower_password: "{{passwd}}"
-      
+      tower_host: http://13.112.244.16
