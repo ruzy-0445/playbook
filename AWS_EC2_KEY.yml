@@ -16,6 +16,6 @@
     
   - name: 將key儲存到CREDENTIALS
     tower_credential:
-      name: {{key_name}}
+      name: "{{key_name}}"
       kind: ssh
       ssh_key_data: "{{key.key.private_key}}"
