@@ -19,3 +19,6 @@
       name: "{{key_name}}"
       kind: ssh
       ssh_key_data: "{{key.key.private_key}}"
+      organization: "NextLink"
+      tower_username: "{{user_name}}"
+      tower_password: "{{passwd}}" 
