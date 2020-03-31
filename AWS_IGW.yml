@@ -1,0 +1,18 @@
+- name: 開始創建IGW
+  hosts: localhost
+  
+  tasks:
+  - name: 開始創建Internet Gateway
+    ec2_vpc_igw:
+      vpc_id: "{{ vpc_id }}"
+      region: "{{ region }}"
+      state: "present"
+      tags:
+        Name: "{{ igw_name }}"
+    register: igw
+    
+  - name: 導出igw_id
+      set_stats:
+      data:
+        igw_id: "{{igw.gateway_id}}"
+    
