@@ -1,0 +1,21 @@
+- name: Key建置
+  hosts: localhost
+  tasks:
+  
+  - name: 開始執行key生成
+    ec2_key:
+      name: "{{key_name}}"
+      region: "{{region}}"
+    register: key
+    
+  - name: 將key輸出到環境變數
+    set_stats:
+      data:
+        private_key: "{{key.key.private_key}}"
+      
+    
+  - name: 將key儲存到CREDENTIALS
+    tower_credential:
+      name: {{key_name}}
+      kind: ssh
+      ssh_key_data: "{{key.key.private_key}}"
