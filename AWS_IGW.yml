@@ -12,7 +12,7 @@
     register: igw
     
   - name: 導出igw_id
-      set_stats:
+    set_stats:
       data:
         igw_id: "{{igw.gateway_id}}"
     
