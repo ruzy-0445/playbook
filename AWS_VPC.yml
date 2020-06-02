@@ -13,3 +13,5 @@
     set_stats:
       data:
         vpc_id: "{{vpc.vpc.id}}"
+  - debug:
+      var: "{{vpc_id}}"
