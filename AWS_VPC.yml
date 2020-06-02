@@ -14,4 +14,4 @@
       data:
         vpc_id: "{{vpc.vpc.id}}"
   - debug:
-      var: "{{vpc_id}}"
+      var: vpc_id
